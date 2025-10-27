@@ -1,3 +1,13 @@
+/*You are given a single integer x.
+
+Find two positive integers a and b such that:
+
+(a \text{ AND } b) + (a \text{ OR } b) = x
+
+Print any valid pair (a, b).
+
+It is guaranteed that at least one such pair always exists.*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -12,9 +22,7 @@
 #include <limits>
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    return 0;
+void Solve(long long x) {
+    // write your code here
+    cout<<x-1<<" "<<1<<endl;
 }
