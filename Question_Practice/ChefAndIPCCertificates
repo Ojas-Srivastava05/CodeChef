@@ -1,0 +1,49 @@
+/*
+Chef and IPC Certificates
+
+Read problems statements in Hindi, Mandarin Chinese, Russian, Vietnamese, and Bengali as well.
+
+There were N students (numbered 1 through N) participating in the Indian Programming Camp (IPC) and they watched a total of K lectures (numbered 1 through K). For each student i and each lecture j, the i-th student watched the j-th lecture for T[i][j] minutes.
+
+Additionally, for each student i, we know that this student asked the question, "What is the criteria for getting a certificate?" Q[i] times.
+
+The criteria for getting a certificate is that a student must have watched at least M minutes of lectures in total and they must have asked the question no more than 10 times.
+
+Find out how many participants are eligible for a certificate.
+
+Input:
+The first line of the input contains three space-separated integers N, M and K.
+N lines follow. For each valid i, the i-th of these lines contains K+1 space-separated integers T[i][1], T[i][2], …, T[i][K], Q[i].
+
+Output:
+Print a single line containing one integer — the number of participants eligible for a certificate.
+
+Constraints:
+- 1 ≤ N, K ≤ 1,000
+- 1 ≤ M ≤ 10^6
+- 1 ≤ Q[i] ≤ 10^6 for each valid i
+- 1 ≤ T[i][j] ≤ 1,000 for each valid i and j
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int n,m,k;
+    cin>>n>>m>>k;
+    int count=0;
+    while(n--)
+    {
+        vector<int>time(k+1);
+        for(int i=0;i<k+1;i++)
+        {
+            cin>>time[i];
+        }
+        int watched=accumulate(time.begin(),time.end()-1,0);
+        if(watched>=m && time[k]<=10)
+        count++;
+    }
+    cout<<count<<endl;
+    return 0;
+}
